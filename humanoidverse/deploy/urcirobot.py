@@ -307,7 +307,7 @@ class URCIRobot:
         self._kick_motion_res_counter = self.timer
         
         motion_times = torch.tensor((self.timer+1) * self.dt, dtype=torch.float32)
-        motion_ids = torch.zeros((1), dtype=torch.int32)
+        motion_ids = torch.zeros((1), dtype=torch.long)
         self._kick_motion_res_buffer = self.motion_lib.get_motion_state(motion_ids, motion_times)
         
         return self._kick_motion_res_buffer
@@ -389,6 +389,7 @@ class URCIRobot:
         
         
         dof_init_pose = cfg_init_state.default_joint_angles
+        print(f"Robot dof_init_pose: {dof_init_pose}")
         dof_effort_limit_list = self.cfg.robot.dof_effort_limit_list
         
         self.dof_init_pose = np.array([dof_init_pose[name] for name in self.dof_names])
