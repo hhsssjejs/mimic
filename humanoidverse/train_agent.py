@@ -92,6 +92,7 @@ def main(config: OmegaConf):
     
     pre_process_config(config)
 
+    logger.info(f"config.env: {config.env}")
     config.env.config.save_rendering_dir = str(Path(config.experiment_dir) / "renderings_training")
     env: BaseEnv = instantiate(config=config.env, device=device)
 

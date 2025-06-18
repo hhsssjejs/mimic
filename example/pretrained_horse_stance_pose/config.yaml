@@ -209,6 +209,14 @@ robot:
       waist_yaw_joint: 0.0
       waist_roll_joint: 0.0
       waist_pitch_joint: 0.0
+      # left_shoulder_pitch_joint: 0
+      # left_shoulder_roll_joint: 0
+      # left_shoulder_yaw_joint: 0.0
+      # left_elbow_joint: 0
+      # right_shoulder_pitch_joint: 0
+      # right_shoulder_roll_joint: -0
+      # right_shoulder_yaw_joint: 0.0
+      # right_elbow_joint: 0
       left_shoulder_pitch_joint: 0.2
       left_shoulder_roll_joint: 0.2
       left_shoulder_yaw_joint: 0.0
@@ -876,8 +884,8 @@ simulator:
       dynamic_friction: 1.0
       restitution: 0.0
     sim:
-      fps: 200
-      control_decimation: 4
+      fps: 500
+      control_decimation: 10
       substeps: 1
       physx:
         num_threads: 4
